@@ -1,5 +1,5 @@
-I learned how to use Flask to build a Full-Featured Web Application.
-
+I learned how to use Flask to build a Full-Featured Web Application.                                         17-04-2023
+                                                                                                             05:10:30PM
 > What is Flask?
   Flask is a lightweight and flexible web framework for Python.
   It provides developers with the necessary tools and libraries to build web applications and APIs quickly and easily.
@@ -18,5 +18,7 @@ I learned how to use Flask to build a Full-Featured Web Application.
 
      "Overall, Flask is a popular choice among developers due to its simplicity, flexibility, and ease of use.
               It's a great choice for building web applications and APIs of any size or complexity"
+
+
 
 
