@@ -1,0 +1,22 @@
+I learned how to use Flask to build a Full-Featured Web Application.
+
+> What is Flask?
+  Flask is a lightweight and flexible web framework for Python.
+  It provides developers with the necessary tools and libraries to build web applications and APIs quickly and easily.
+  Flask is designed to be simple and easy to use, with a minimalistic core that can be extended as needed with various
+  third-party extensions.
+
+> Some features and benefits of Flask include:
+
+1. Built-in development server and debugger
+2. Built-in support for handling requests and responses using HTTP methods
+3. Integrated support for unit testing
+4. Support for Jinja2 templating engine
+5. Support for SQLite, MySQL, and PostgresSQL databases, among others
+6. Flexible URL routing
+7. A wide range of third-party extensions to add additional functionality to your application.
+
+     "Overall, Flask is a popular choice among developers due to its simplicity, flexibility, and ease of use.
+              It's a great choice for building web applications and APIs of any size or complexity"
+
+
