@@ -1,12 +1,14 @@
-I learned how to use Flask to build a Full-Featured Web Application.                                         17-04-2023
+                                                                                                             17-04-2023
+                   I Stared Learning How To Use Flask To Build A Full-Featured Web Application.
                                                                                                              05:10:30PM
-> What is Flask?
-  Flask is a lightweight and flexible web framework for Python.
-  It provides developers with the necessary tools and libraries to build web applications and APIs quickly and easily.
-  Flask is designed to be simple and easy to use, with a minimalistic core that can be extended as needed with various
-  third-party extensions.
+-> What is Flask?
+   Flask is a lightweight and flexible web framework for Python.
+   It provides developers with the necessary tools and libraries to build web applications and APIs quickly and easily.
+   Flask is designed to be simple and easy to use, with a minimalistic core that can be extended as needed with various
+   third-party extensions.
 
-> Some features and benefits of Flask include:
+
+-> Some features and benefits of Flask include:
 
 1. Built-in development server and debugger
 2. Built-in support for handling requests and responses using HTTP methods
@@ -20,5 +22,40 @@ I learned how to use Flask to build a Full-Featured Web Application.            
               It's a great choice for building web applications and APIs of any size or complexity"
 
 
+-> What is a Web Server?
+   A web server is a software application that processes requests sent by clients over the internet, and returns
+   responses accordingly. When a client requests a resource, such as a web page or a file, the web server receives
+   the request, processes it, and returns the appropriate response.
 
+
+-> What are Python-Based Web Applications or Frameworks?
+   Python-based web applications or frameworks are software programs that use the Python programming language to
+   build web applications. They provide a way to handle HTTP requests and responses, manage user sessions,
+   generate dynamic content, interact with databases, and perform other web-related tasks.
+
+   Python has many popular web frameworks, including Flask, Django, Pyramid, Bottle, and CherryPy, to name a few.
+   These frameworks provide a set of tools and libraries that make it easier to build web applications quickly and
+   efficiently. They handle many of the low-level details of web development, such as routing, authentication, and
+   templating, so that developers can focus on writing application-specific code.
+
+
+-> What is WSGI Application?
+   WSGI stands for Web Server Gateway Interface, and it is a standard interface between web servers and
+   Python-based web applications or frameworks. The purpose of WSGI is to provide a standard interface that allows
+   web servers to communicate with web applications or frameworks in a consistent and efficient manner.
+
+   A WSGI application is a Python callable that conforms to the WSGI specification. When a web server receives a request
+   from a client, it passes the request to the WSGI application, which generates a response that is returned to
+   the server and ultimately sent back to the client.
+
+   Flask is a Python-based web framework that provides a simple and flexible way to create web applications.
+   By creating an instance of the Flask class, we are creating a WSGI application that can receive requests from
+   a web server and generate responses that are sent back to the client.
+
+
+-> What is a route decorator?
+   @app.route("/")   "/" is the root page of the website
+   In Flask, a route decorator is a special function that is used to associate a URL with a function that generates a
+   response. A route decorator is typically used to define the URL pattern for a particular view function, and it tells
+   Flask which URL should trigger that function.
 
