@@ -1,5 +1,5 @@
                                                                                                              17-04-2023
-                   I Stared Learning How To Use Flask To Build A Full-Featured Web Application.
+                    I Stared Learning How To Use Flask To Build A Full-Featured Web Application.
                                                                                                              05:10:30PM
 
 ************************************************************************************************************************
