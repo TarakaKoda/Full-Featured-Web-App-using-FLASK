@@ -1,11 +1,18 @@
 from flask import Flask
-
-app = Flask(__name__)  # app is an instance of WSGI (Web Server Gateway Interface)
-                       # __name__ is a name of the application’s module or package (eg. flaskblog)
+app = Flask(__name__)
 
 
 @app.route("/")
-def hello_world():
-    return "<p>Hello, World!</p>"
+def home_page():
+    return f"<h1>Home Page</h1>" \
+           f"<h1>Welcome to our home page</h1>"
 
+
+@app.route("/about")
+def about_page():
+    return f"<h1>This is our about page</h1>"
+
+
+if __name__ == "__main__":
+    app.run(debug=True)
 
