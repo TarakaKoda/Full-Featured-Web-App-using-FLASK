@@ -26,15 +26,16 @@
      "Overall, Flask is a popular choice among developers due to its simplicity, flexibility, and ease of use.
               It's a great choice for building web applications and APIs of any size or complexity"
 
+------------------------------------------------------------------------------------------------------------------------
 
 -> What is a Web Server?
-   A web server is a software application that processes requests sent by clients over the internet, and returns
+ - A web server is a software application that processes requests sent by clients over the internet, and returns
    responses accordingly. When a client requests a resource, such as a web page or a file, the web server receives
    the request, processes it, and returns the appropriate response.
 
 
 -> What are Python-Based Web Applications or Frameworks?
-   Python-based web applications or frameworks are software programs that use the Python programming language to
+ - Python-based web applications or frameworks are software programs that use the Python programming language to
    build web applications. They provide a way to handle HTTP requests and responses, manage user sessions,
    generate dynamic content, interact with databases, and perform other web-related tasks.
 
@@ -43,9 +44,10 @@
    efficiently. They handle many of the low-level details of web development, such as routing, authentication, and
    templating, so that developers can focus on writing application-specific code.
 
+------------------------------------------------------------------------------------------------------------------------
 
 -> What is WSGI Application?
-   WSGI stands for Web Server Gateway Interface, and it is a standard interface between web servers and
+ - WSGI stands for Web Server Gateway Interface, and it is a standard interface between web servers and
    Python-based web applications or frameworks. The purpose of WSGI is to provide a standard interface that allows
    web servers to communicate with web applications or frameworks in a consistent and efficient manner.
 
@@ -57,15 +59,18 @@
    By creating an instance of the Flask class, we are creating a WSGI application that can receive requests from
    a web server and generate responses that are sent back to the client.
 
+------------------------------------------------------------------------------------------------------------------------
 
 -> What is a route decorator?
-   @app.route("/")   "/" is the root page of the website
+ - @app.route("/")   "/" is the root page of the website
    In Flask, a route decorator is a special function that is used to associate a URL with a function that generates a
    response. A route decorator is typically used to define the URL pattern for a particular view function, and it tells
    Flask which URL should trigger that function.
 
+------------------------------------------------------------------------------------------------------------------------
+
 -> What is a URL?
-   A URL (Uniform Resource Locator) is a web address that identifies a unique location on the internet.
+ - A URL (Uniform Resource Locator) is a web address that identifies a unique location on the internet.
    A URL consists of several parts, including:
    Scheme: the protocol used to access the resource (such as http or https)
    Domain name: the name of the server that hosts the resource (such as www.example.com)
@@ -78,10 +83,159 @@
    asking for the resource located at /blog?page=2. The server then responds with the resource (in this case, a blog page),
    which is displayed in the user's web browser.
 
+------------------------------------------------------------------------------------------------------------------------
+
 -> What is if __name__ == "__main__"?
-   The if __name__ == "__main__" statement allows a script to distinguish between being run as the main program and being
+ - The if __name__ == "__main__" statement allows a script to distinguish between being run as the main program and being
    imported as a module. Typically, any code that is intended to be run only when the script is executed as the main program
    (and not when it is imported as a module) is placed inside this conditional block.
 
+------------------------------------------------------------------------------------------------------------------------
+
                                         *End of PART-1: Getting Started*
+
 ************************************************************************************************************************
+                                                                                                             18-04-2023
+                                             PART-2: TEMPLATES
+                                                                                                             02:00:19PM
+
+------------------------------------------------------------------------------------------------------------------------
+
+> What are Templates in flask?
+- In Flask, a template is a file that contains HTML code with placeholders for dynamic content that will be generated by
+  the application at runtime. Flask uses the Jinja2 template engine to render these templates and generate the HTML that
+  will be sent to the client's browser.
+
+  Templates allow developers to separate the presentation logic from the business logic of the application, making it
+  easier to maintain and modify the code. Flask templates typically have the file extension ".html" and can be located
+  in a subdirectory called "templates" within the Flask application's main directory.
+
+  To render a template in Flask, the application typically creates a context containing the dynamic data to be displayed,
+  and then passes this context to the Jinja2 engine to generate the final HTML output. This process is handled automatically
+  by Flask's built-in template rendering functions, such as render_template(), which takes the name of the template file
+  as an argument, along with any additional variables needed to render the template.
+
+  Overall, templates in Flask are a powerful tool for building dynamic and interactive web applications, allowing
+  developers to create highly customizable user interfaces that can adapt to changing data and user input.
+
+------------------------------------------------------------------------------------------------------------------------
+
+> What is rander_template()?
+- render_template() is a function provided by the Flask web framework that is used to render Jinja2 templates in a
+  Flask application. This function takes the name of the template file as its first argument, along with any additional
+  arguments containing dynamic data that should be passed to the template for rendering.
+
+------------------------------------------------------------------------------------------------------------------------
+
+> What are Static HTML Pages?
+- Static HTML pages are web pages that are delivered to the user exactly as they are stored on the server, without any
+  server-side processing or dynamic content generation. In other words, the HTML, CSS, and JavaScript code of the page is
+  fixed and does not change based on user input or other external factors.
+
+  Static HTML pages can be created using a variety of tools, including text editors, integrated development environments
+  (IDEs), and website builders. Once the HTML code for a page has been written, it can be saved to a file with a .html
+  extension and uploaded to a web server for delivery to users.
+
+  Static HTML pages are often used for simple websites or web applications that do not require dynamic content or user
+  interaction. They can be fast and efficient to deliver, as there is no need for server-side processing or database
+  access. However, they can be difficult to maintain and update, as any changes to the content or layout of the page
+  must be made manually by editing the HTML code directly.
+
+  Overall, static HTML pages can be a useful tool for creating simple web pages or prototypes, but for more complex
+  web applications with dynamic content and user interaction, a server-side programming language such as Python with a
+  web framework like Flask or Django is typically required.
+
+------------------------------------------------------------------------------------------------------------------------
+
+> What is Jinja2?
+- Jinja2 is a popular and widely-used templating engine for Python, which is integrated with the Flask web framework to
+  provide dynamic HTML rendering for web applications. It was created as a successor to the earlier Jinja templating
+  engine, and is known for its flexibility, ease of use, and powerful features.
+
+  Jinja2 allows Flask developers to create HTML templates with placeholders for dynamic data, which can be populated
+  with content generated by the application at runtime. This separation of presentation and application logic makes it
+  easier to develop and maintain web applications, as it allows developers to focus on the core logic of the application
+  while leaving the presentation layer to the templating engine.
+
+  Jinja2 supports a wide range of features, including template inheritance, macros, filters, and loops, which can be
+  used to create complex and dynamic templates with ease. It also provides a secure template system, which protects
+  against common security threats such as cross-site scripting (XSS) attacks.
+
+  Overall, Jinja2 is an essential component of the Flask framework, and is widely regarded as one of the most powerful
+  and flexible templating engines available for Python developers.
+
+------------------------------------------------------------------------------------------------------------------------
+
+> What control structures does Jinja2 provide for creating dynamic HTML pages in Flask?
+- Jinja2 is a powerful templating engine used in Flask to create dynamic HTML pages. It provides a variety of
+  control structures, including looping, if and else conditions, which allow developers to create complex and dynamic
+  templates with ease.
+
+------------------------------------------------------------------------------------------------------------------------
+
+> What is Looping in Jinja2?
+- Jinja2 provides a range of looping constructs, including the for loop and the loop.index variable, which allow
+  developers to iterate over collections of data and generate HTML code dynamically.
+  Here is an example of a simple for loop in Jinja2:
+    {% for item in items %}
+    <li>{{ item }}</li>
+  {% endfor %}
+
+------------------------------------------------------------------------------------------------------------------------
+
+> What is If and else conditions in Jinja2?
+  Jinja2 also provides a range of conditional constructs, including the if statement, else statement, and elif statement.
+  These allow developers to conditionally render HTML code based on the values of variables or the results of other
+  logical expressions.
+  Here is an example of a simple if statement in Jinja2:
+      {% if user %}
+    <p>Hello, {{ user }}!</p>
+  {% else %}
+    <p>Hello, guest!</p>
+  {% endif %}
+
+------------------------------------------------------------------------------------------------------------------------
+
+> what is a block in jinja2?
+  In Jinja2, a block is a section of a template that can be overridden or extended by child templates. It is defined
+  using the {% block %} tag in the parent template, and child templates can override the content of the block using the
+  same tag.
+
+  Here's an example of a parent template that defines a block:
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <title>{% block title %}Default Title{% endblock %}</title>
+    </head>
+    <body>
+      <div id="content">
+        {% block content %}
+          <p>This is the default content.</p>
+        {% endblock %}
+      </div>
+    </body>
+    </html>
+
+  In this example, the parent template defines two blocks: title and content. The content within each block is wrapped
+  in {% block %} and {% endblock %} tags.
+  A child template can override the content of a block by defining the same block with the same name in its own
+  {% block %} tag.
+  For example:
+    {% extends "base.html" %}
+    {% block title %}My Custom Title{% endblock %}
+    {% block content %}
+      <h1>Welcome to my site!</h1>
+      <p>This is my custom content.</p>
+    {% endblock %}
+
+  In this example, the child template extends the parent template using the {% extends %} tag. It then overrides the
+  title block and the content block with its own content.
+  Overall, blocks in Jinja2 are a powerful feature that allows developers to create modular and reusable templates, and
+  to define a common structure for a set of related pages while still allowing individual pages to customize their
+  content as needed.
+
+
+
+
+
+
