@@ -1,6 +1,11 @@
                                                                                                              17-04-2023
                    I Stared Learning How To Use Flask To Build A Full-Featured Web Application.
                                                                                                              05:10:30PM
+
+************************************************************************************************************************
+
+                                             PART-1: GETTING STARTED
+
 -> What is Flask?
    Flask is a lightweight and flexible web framework for Python.
    It provides developers with the necessary tools and libraries to build web applications and APIs quickly and easily.
@@ -59,3 +64,24 @@
    response. A route decorator is typically used to define the URL pattern for a particular view function, and it tells
    Flask which URL should trigger that function.
 
+-> What is a URL?
+   A URL (Uniform Resource Locator) is a web address that identifies a unique location on the internet.
+   A URL consists of several parts, including:
+   Scheme: the protocol used to access the resource (such as http or https)
+   Domain name: the name of the server that hosts the resource (such as www.example.com)
+   Path: the location of the resource on the server (such as /blog)
+   Query string: optional parameters that can be passed to the server to modify the behavior of the resource (such as ?page=2)
+
+   For example, the URL https://www.example.com/blog?page=2 consists of the scheme https, the domain name www.example.com,
+   the path /blog, and the query string ?page=2.
+   When a user enters this URL into their web browser, the browser sends a request to the server at www.example.com
+   asking for the resource located at /blog?page=2. The server then responds with the resource (in this case, a blog page),
+   which is displayed in the user's web browser.
+
+-> What is if __name__ == "__main__"?
+   The if __name__ == "__main__" statement allows a script to distinguish between being run as the main program and being
+   imported as a module. Typically, any code that is intended to be run only when the script is executed as the main program
+   (and not when it is imported as a module) is placed inside this conditional block.
+
+                                        *End of PART-1: Getting Started*
+************************************************************************************************************************
