@@ -3,7 +3,7 @@
                                                                                                              05:20:32PM
 
 ************************************************************************************************************************
-
+                                             PART - 1
 * Getting Started with Flask:
 
   - use terminal to install flask into python.
@@ -46,9 +46,49 @@ def hello_world():
 4. The function returns the message we want to display in the user’s browser. The default content type is HTML,
    so HTML in the string will be rendered by the browser.
 
+************************************************************************************************************************
+
+> Created Two new routes to your flask application:
+
+- The @app.route("/") decorator tells Flask to map the / or localhost URL to the home_page() function.
+  @app.route("/")
+  def home_page():
+      return f"<h1>Home Page</h1>" \
+             f"<h1>Welcome to our home page</h1>"
+
+- When a user navigates to http://localhost:5000/about, Flask will call the home_page() function and return the string
+  <h1>Home Page</h1> \ <h1>Welcome to our home page</h1> as the response.
 
 
+- The @app.route("/about") decorator tells Flask to map the /about URL to the about_page() function.
+  @app.route("/about")
+  def about_page():
+      return f"<h1>This is our about page</h1>"
 
+- When a user navigates to http://localhost:5000/about, Flask will call the about_page() function and return the string
+  <h1>This is our about page</h1> as the response.
+
+************************************************************************************************************************
+
+  if __name__ == "__main__":
+    app.run(debug=True)
+
+- This code block is commonly used in Flask applications to start the development server when the app.py file is run
+  directly from the command line.
+
+- The if __name__ == "__main__": statement is used to ensure that the code inside the block is only executed when the
+  script is run directly, and not when it is imported as a module.
+
+- The app.run(debug=True) method starts the Flask development server, with the debug mode enabled. The debug mode
+  automatically restarts the server whenever a code change is detected, making it easy to make changes and test the
+  application in a development environment.
+
+                                       *End of PART-1: Getting Started*
+
+************************************************************************************************************************
+                                                                                                             18-04-2023
+
+                                                                                                             02:00:19PM
 
 
 
