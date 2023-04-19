@@ -271,7 +271,104 @@ def about():
       <h1>About Page</h1>
   {% endblock content %}
 
+- For more information checkout the main and layout.html template where more html, css, javascript and bootstrap added.
+
+                                      *End of PART-2: TEMPLATES*
+
 ************************************************************************************************************************
+                                                                                                             19-04-2023
+                                       PART-2: FORMS AND VALIDATIONS
+                                                                                                             10:35:30AM
+
+- installing wt forms extension
+  pip install flask-wtf
+  - This extension provides a simple way to define and validate forms
+
+- create a file in main directory as forms.py
+
+************************************************************************************************************************
+
+- forms.py
+
+from flask_wtf import FlaskForm
+from wtforms import StringField, PasswordField, SubmitField, BooleanField
+from wtforms.validators import DataRequired, Length, Email, equal_to
+
+
+class RegisterForm(FlaskForm):
+    username = StringField("Username", validators=[DataRequired(), Length(min=2, max=20)])
+    email = StringField("Email", validators=[DataRequired(), Email()])
+    password = PasswordField("Password", validators=[DataRequired()])
+    confirm_password = PasswordField("Confirm Password",[DataRequired(), equal_to("password")])
+    submit = SubmitField("Sign up")
+
+
+class LoginFrom(FlaskForm):
+    email = StringField("Email", validators=[DataRequired(), Email()])
+    password = PasswordField("Password", validators=[DataRequired()])
+    remember = BooleanField("Remember Me")
+    submit = SubmitField("Login")
+
+************************************************************************************************************************
+
+- Added Secret Key to our flaskblog.py
+
+from flask import Flask, render_template, url_for
+from forms import RegisterForm, LoginForm
+app = Flask(__name__)
+
+app.config["SECRET_KEY"] = "1de386d816c4c0484ffa4e3dc43f21e       # You can generate secret key using secrets module
+                                                                  # import secrets
+                                                                  # secrets.token_hex(16)
+                                                                  # 1de386d816c4c0484ffa4e3dc43f21ea"
+
+posts = [
+    {
+    "username": "Srinivas koda",
+    "title": "Blog Post 1"
+    "content": "This is my first post",
+    "contact": "srinivaskoda@gmail.com",
+    "date": "June 30, 2023"
+    },
+    {
+    "username": "Naga Pavan"
+    "title": "Blog Post 2",
+    "content": "This is my second post",
+    "contact": "nagapavan@gmail.com"
+    "date": "June 30, 2023"
+
+    }
+]
+
+
+@app.route("/")
+@app.route("/home")
+def home():
+    return render_template("home.html", posts=posts)
+
+
+@app.route("/about")
+def about():
+    return render_template("about.html", title="About")
+
+- added register route and login route
+@app.route("/register")
+def register():
+    form = RegisterForm()
+    return = render_template("register.html", title="Register", form=form)
+
+@app.route("/login")
+def login():
+    form = LoginForm()
+    return render_template("login.html", title="Login", form=form)
+
+
+if __name__ == "__main__":
+    app.run(debug=True)
+
+
+
+
 
 
 
