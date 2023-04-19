@@ -234,8 +234,38 @@
   to define a common structure for a set of related pages while still allowing individual pages to customize their
   content as needed.
 
+------------------------------------------------------------------------------------------------------------------------
 
+> What is url_for?
+  url_for is a function in the Flask web application framework for generating URLs to endpoints (view functions) within
+  the application. It takes the name of the endpoint as the first argument and any number of keyword arguments that
+  correspond to the variable parts of the URL rule for that endpoint.
 
+------------------------------------------------------------------------------------------------------------------------
 
+                                         *End of PART-2: TEMPLATES*
 
+************************************************************************************************************************
+                                                                                                             19-04-2023
+                                       PART-2: FORMS AND VALIDATIONS
+                                                                                                             10:35:30AM
+
+------------------------------------------------------------------------------------------------------------------------
+
+> what are forms in flask?
+  In Flask, a "Form" is a way to represent the data submitted by the user via an HTML form. It is a collection of fields
+  that the user fills out and submits to the server for processing.
+
+------------------------------------------------------------------------------------------------------------------------
+
+> What is wtf extension?
+  In order to work with forms in Flask, you typically use the Flask-WTF extension, which provides a simple way to define
+  and validate forms. This extension includes functionality for generating HTML forms, validating user input, and
+  handling form submission.
+
+  To use Flask-WTF, you first need to install it using pip. You can then define a form by creating a class that inherits
+  from the FlaskForm class provided by Flask-WTF. Inside the class, you can define the fields of the form using various
+  field classes such as StringField, IntegerField, BooleanField, etc.
+
+------------------------------------------------------------------------------------------------------------------------
 
