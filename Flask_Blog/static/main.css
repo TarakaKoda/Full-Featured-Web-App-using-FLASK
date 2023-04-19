@@ -78,3 +78,39 @@ a.article-title:hover {
 .account-heading {
   font-size: 2.5rem;
 }
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.logo {
+  margin-left: 20px;
+}
+
+
+.nav-item.nav-link {
+  border: 1px solid #000;                   /* Set border to 1px width and black color */
+
+}
+
+
+.btn-outline-info {
+    color: #17a2b8; /* Change to the desired text color */
+    border-color: #17a2b8; /* Change to the desired border color */
+}
+
+.btn-outline-info:hover {
+    background-color: yellow;
+    color: black; /* Change to black for the text color */
+    border-color: black; /* Change to black for the border color */
+}
+
