@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template, url_for, flash, redirect
 from forms import RegistrationForm, LoginForm
 
 app = Flask(__name__)    # app is a WSGI application (Web Server Gateway Interface)
@@ -36,15 +36,24 @@ def about():
     return render_template("about.html", title="About")
 
 
-@app.route("/register")
+@app.route("/register", methods=["GET", "POST"])
 def register():
     form = RegistrationForm()
+    if form.validate_on_submit():
+        flash(f"Welcome to Thunder ⚡  {form.username.data}!  We're thrilled to have you join us!", "success")
+        return redirect(url_for("home"))
     return render_template("register.html", title="Register", form=form)
 
 
-@app.route("/login")
+@app.route("/login", methods=["GET", "POST"])
 def login():
     form = LoginForm()
+    if form.validate_on_submit():
+        if form.email.data == "nagapavan@gmail.com" and form.password.data == "password":
+            flash(f" I just sensed the weather is changing. Maybe the God Of Thunder ⚡ has arrived! Enjoy your stay.", "success")
+            return redirect(url_for("home"))
+        else:
+            flash(f"⚠ Thunder Strikes! Login Unsuccessful. Please check Email and Password", "danger")
     return render_template("login.html", tilte="Login", form=form)
 
 
