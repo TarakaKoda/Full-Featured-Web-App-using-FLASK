@@ -317,7 +317,7 @@ from flask import Flask, render_template, url_for
 from forms import RegisterForm, LoginForm
 app = Flask(__name__)
 
-app.config["SECRET_KEY"] = "1de386d816c4c0484ffa4e3dc43f21e       # You can generate secret key using secrets module
+app.config["SECRET_KEY"] = "1de386d816c4c0484ffa4e3dc43f21e"      # You can generate secret key using secrets module
                                                                   # import secrets
                                                                   # secrets.token_hex(16)
                                                                   # 1de386d816c4c0484ffa4e3dc43f21ea"
@@ -366,9 +366,200 @@ def login():
 if __name__ == "__main__":
     app.run(debug=True)
 
+************************************************************************************************************************
+
+- register.html
+
+{% extends "layout.html" %}
+{% block content %}
+    <div class="content-section">
+        <form method="POST" action="">
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Join Our Community Of Thunderous Voices!</legend>
+                <div class="form-group">
+                    {{ form.username.label(class="form-control-label") }}
+                    {{ form.username(class="form-control form-control-lg") }}
+                </div>
+                <div class="form-group">
+                    {{ form.email.label(class="form-control-label") }}
+                    {{ form.email(class="form-control form-control-lg") }}
+                </div>
+                <div class="form-group">
+                    {{ form.password.label(class="form-control-label") }}
+                    {{ form.password(class="form-control form-control-lg") }}
+                </div>
+                <div class="form-group">
+                    {{ form.confirm_password.label(class="form-control-label") }}
+                    {{ form.confirm_password(class="form-control form-control-lg") }}
+                </div>
+            </fieldset>
+            <div class="form-group">
+                {{ form.submit(class="btn btn-outline-warning") }}
+            </div>
+        </form>
+    </div>
+    <div class="border-top pt-3">
+        <small class="text-muted">
+            Already Have an Account? <a class="ml-2" href="{{ url_for('login') }}">Sign In</a>
+        </small>
+    </div>
+{% endblock content %}
+
+************************************************************************************************************************
+- added flash message and redirect
+
+from flask import Flask, render_template, url_for, flash, redirect
+app = Flask(__name__)
+
+app.config["SECRET_KEY"] = "1de386d816c4c0484ffa4e3dc43f21e
+
+posts = [
+    {
+    "username": "Srinivas koda",
+    "title": "Blog Post 1"
+    "content": "This is my first post",
+    "contact": "srinivaskoda@gmail.com",
+    "date": "June 30, 2023"
+    },
+    {
+    "username": "Naga Pavan"
+    "title": "Blog Post 2",
+    "content": "This is my second post",
+    "contact": "nagapavan@gmail.com"
+    "date": "June 30, 2023"
+
+    }
+]
+
+@app.route("/")
+@app.route("/home")
+def home():
+    return render_template("home.html", title="Home", posts=posts)
+
+@app.route("/about")
+def about("/about"):
+    return render_template("about.html", title="About")
 
 
+- added flash message and redirect to home page
+app.route("/register")
+def register():
+    form = RegisterForm()
+    if form.validation_is_submit():
+        flash(f"Welcome to Thunber! {form.username.data} We're thrilled to have you join us!", "success")
+        return redirect(url_for("/home"))
 
+@app.route("/login")
+def login():
+    return redirect_template("login.html", title="login")
 
+if __name__ = "__main__":
+    app.run(debug=True)
 
+************************************************************************************************************************
 
+- adding flash message to layout template so that it can display to the user next after successfully logged in.
+
+{% with message = get_flashed_messages(with_categories=true) %}
+    {% if message %}
+        {% for category, message in message %}
+            <div class="alert alert-{{category}}>
+                {{ message }}
+            </div>
+        {% endfor%}
+    {% endif %}
+{% endwith%}
+
+- add this above to the {% block content %} in the layout.
+
+************************************************************************************************************************
+
+- giving error message feedback to the user if they enter wrong data
+ <div class="form-group">
+{{ form.username.label(class="form-control-label") }}
+{% if form.username.errors %}
+    {{ form.username(class="form-control form-control-lg is-invalid") }}
+    <div class="invalid-feedback">
+        {% for error in form.username.errors%}
+        <span>{{ error }}</span>
+        {% endfor %}
+    </div>
+{% else %}
+    {{ form.username(class="form-control form-control-lg") }}
+{% endif%}
+</div>
+
+-this goes same to all the forms like login(email, password) and register(username, email, password, confirm_password) pages.
+
+------------------------------------------------------------------------------------------------------------------------
+
+- login template
+{% extends "layout.html" %}
+{% block content %}
+    <div class="content-section">
+        <form method="POST" action="">
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Login!</legend>
+                <div class="form-group">
+                    {{ form.email.label(class="form-control-label") }}
+                    {% if form.email.errors %}
+                        {{ form.email(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.email.errors%}
+                            <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>passwordconfirm_password
+                    {% else %}
+                        {{ form.email(class="form-control form-control-lg") }}
+                    {% endif%}
+                </div>
+                <div class="form-group">
+                    {{ form.password.label(class="form-control-label") }}
+                    {% if form.password.errors %}
+                        {{ form.password(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.password.errors%}
+                            <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.password(class="form-control form-control-lg") }}
+                    {% endif%}
+                </div>
+                <div class="form-check">
+                    {{ form.remember(class="form-check-input") }}
+                    {{ form.remember.label(class="form-check-label") }}
+                </div>
+            </fieldset>
+            <div class="form-group">
+                {{ form.submit(class="btn border rounded btn-outline-warning") }}
+            </div>
+            <small class="text-mute ml-2">
+                <a href="#">Forgot Password?</a>
+            </small>
+        </form>
+    </div>
+    <div class="border-top pt-3">
+        <small class="text-muted">
+            Need an Account? <a class="ml-2" href="{{ url_for('register') }}">Sign Up Now</a>
+        </small>
+    </div>
+{% endblock content %}
+
+------------------------------------------------------------------------------------------------------------------------
+- checking fake login
+
+@app.route("/login")
+def login():
+    form = LoginForm()
+    if form.validation_is_submit():
+        if form.email.data == "nagapavan@gmail.com" and form.password.data == "password":
+            flash(f"Welcome to Thunder!", "success")
+            return redirect(url_for("/home"))
+        else:
+            flash(f"Thunder strikes! Login Unsuccessful. Please check Email and Password")
+    return render_template("login.html", title="Login", form=form)
+
+------------------------------------------------------------------------------------------------------------------------
