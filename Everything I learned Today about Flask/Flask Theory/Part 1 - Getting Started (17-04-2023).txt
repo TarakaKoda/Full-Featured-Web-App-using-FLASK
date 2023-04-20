@@ -269,3 +269,22 @@
 
 ------------------------------------------------------------------------------------------------------------------------
 
+> Why we need to put a secret key?
+  In Flask, the secret_key is used for securely signing session cookies and other security-related uses. The secret key
+  is a random string of bytes used to encrypt the session cookie data and protect it from tampering.
+
+  When a Flask application is created, it should have a secret key set, which is used to sign cookies and other data
+  that needs to be protected from tampering. Without a secret key, the data can be easily manipulated by attackers,
+  potentially causing security vulnerabilities in your application.
+
+  By setting a secret key, Flask can securely store session data, including the user's login credentials and other
+  sensitive information. This helps to prevent unauthorized access and improve the overall security of your application.
+
+------------------------------------------------------------------------------------------------------------------------
+
+> What is flash message in flask?
+  In Flask, you can use the flash function to display messages to the user. The flash function stores a message in a
+  cookie that will be sent to the browser, and then automatically deleted on the next request.
+
+------------------------------------------------------------------------------------------------------------------------
+
