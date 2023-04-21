@@ -247,7 +247,7 @@
 
 ************************************************************************************************************************
                                                                                                              19-04-2023
-                                       PART-2: FORMS AND VALIDATIONS
+                                       PART-3: FORMS AND VALIDATIONS
                                                                                                              10:35:30AM
 
 ------------------------------------------------------------------------------------------------------------------------
@@ -287,4 +287,66 @@
   cookie that will be sent to the browser, and then automatically deleted on the next request.
 
 ------------------------------------------------------------------------------------------------------------------------
+
+> What is redirect in flask?
+  In Flask, a redirect is a way to send the client's browser to a different URL. This is often used when a user submits
+  a form or performs some action that requires a different view or page to be shown.
+  The redirect() function in Flask returns an HTTP response that instructs the browser to request a different URL.
+  For example, if you want to redirect the user to the homepage of your site after they have successfully logged in
+
+------------------------------------------------------------------------------------------------------------------------
+
+                                       *End of PART-3: FORMS AND VALIDATIONS*
+
+************************************************************************************************************************
+                                                                                                             21-04-2023
+                                       PART-4: DATABASE WITH FLASK-SQLAlchemy
+                                                                                                             09:35:30AM
+------------------------------------------------------------------------------------------------------------------------
+
+> What is Database?
+  A database is a structured collection of data that is organized in a way that allows for efficient storage, retrieval,
+  and manipulation of that data. In a database, data is typically organized into tables, each of which contains a set of
+  records, where each record represents an instance of a particular entity or object.
+
+------------------------------------------------------------------------------------------------------------------------
+
+> What is ORM?
+  ORM stands for Object-Relational Mapping, which is a technique used to map object-oriented programming concepts to
+  relational database concepts.
+
+  ORM provides a way for developers to interact with databases using object-oriented programming languages, like Python,
+  instead of writing raw SQL queries. The ORM tool generates SQL queries based on the object-oriented code that the
+  developer writes, allowing the developer to interact with the database using familiar programming concepts.
+
+  ORMs provide several benefits over writing raw SQL queries, including:
+  Increased productivity: ORM tools allow developers to write code more quickly and with less boilerplate, reducing the
+                          amount of time required to interact with the database.
+
+  Portability: ORM tools abstract away the details of the database, allowing the same code to be used with different
+               database systems.
+
+  Security: ORM tools provide security features, like automatic query parameterization, to prevent SQL injection attacks.
+
+  Maintainability: ORM tools provide a high-level abstraction layer that makes it easier to change the underlying
+                   database schema without having to rewrite large portions of application code.
+
+  There are many popular ORM tools available for Python, including SQLAlchemy, Django ORM, and Peewee. These tools
+  provide different levels of abstraction and support for different database systems, so it's important to choose the
+  one that best fits the needs of your application.
+
+------------------------------------------------------------------------------------------------------------------------
+
+- for working with database in python we use SQLAlchemy
+> What is SQLAlchemy?
+  SQLAlchemy is a popular Object-Relational Mapping (ORM) tool for Python that provides a high-level abstraction layer
+  for working with relational databases. It provides a set of Python classes that map to database tables and columns,
+  allowing developers to interact with the database using Python code instead of raw SQL.
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
 
