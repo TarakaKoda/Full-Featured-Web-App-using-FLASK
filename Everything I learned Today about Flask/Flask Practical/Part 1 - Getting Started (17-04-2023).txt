@@ -619,18 +619,109 @@ class Post(db.Model):
 > first you need to check if your in our project directory or not is not change it or else it won't work
 - command line
 
->>>python
->>>from flaskblog import db    # flaskblog is my application and db is the instance of the database i created.
->>>db.create_all()
+>>> python
+>>> from flaskblog import db    # flaskblog is my application and db is the instance of the database i created.
+>>> db.create_all()
 
 - This may not work, i got stuck here. Thankfully i got yhe solution from someone in the comments named daniel <3
 
 - As of version SQLAlchemy 3.0 to create your db file you will need to run some commands like this in the shell :
 
->>>from project import app, db
->>>app.app_context().push()
->>>db.create_all()
+>>> from project import app, db
+>>> app.app_context().push()
+>>> db.create_all()
 
 - Then the .db file is created in a folder called "Instance" in your project.
 
 ------------------------------------------------------------------------------------------------------------------------
+
+- adding User and Post to our database.
+
+>>> from flaskblog import User, Post
+>>> user_1 = User(username="srinivas", email="srinivas@gmail.com", password="sunrisers")
+>>> user_2 = User(username= "pavan", email="pavan@gmail.com", password="password")
+
+- we didn't specify any id or an image file, since is our primary key it will assign a unique id, and we set a default
+  image file if we won't specify that it will take the "default.jpg".
+
+- now we can add the user_1, user_2 to our database.
+
+>>> db.session.add(user_1)
+>>> db.session.add(user_2)
+
+- now we can commit the changes all at once
+
+>>> db.session.commit()
+- now we committed they should have to be in the database.
+- now we can perform some common query
+
+>>> User.query.all()
+[User("srinivas", "srinivas@gmail.com", "default.jpg"), User("pavan", "pavan@gmail.com","default.jpg")]
+
+>>> User.query.first()
+User("srinivas", "srinivas@gmail.com", "default.jpg")
+
+>>> User.query.filter_by(username="srinivas").all()
+User("srinivas", "srinivas@gmail.com", "default.jpg")
+
+>>> User.query.filter_by(username="srinivas").first()
+User("srinivas", "srinivas@gmail.com", "default.jpg")
+
+>>> user = User.query.filter_by(username="srinivas").first()
+>>> user
+User("srinivas", "srinivas@gmail.com", "default.jpg")
+
+>>> user.id
+1
+>>> user = User.query.get(1)
+>>> user
+User("srinivas", "srinivas@gmail.com", "default.jpg")
+
+>>> user.posts
+[]
+>>>user.id
+1
+>>> post_1 = Post(title="Blog 1", content="First Post Content!", user_id=user.id)
+>>> post_2 = Post(title="Blog 2", content="Second Post Content!", user_id=user.id)
+
+>>> db.session.add(post_1)
+>>> db.session.add(post_2)
+>>> db.commit()
+
+>>>user.posts
+[Post('Blog1', '2023-04-21 12:49:06.421641'), Post('Blog2', '2023-04-21 12:49:06.421641')]
+>>> for post in posts:
+        print(post.title)
+
+Blog 1
+Blog 2
+
+>>> post = Post.query.first()
+>>>post
+
+Post('Blog1', '2023-04-21 12:49:06.421641')
+>>> post.user_id
+1
+>>> post.author
+>>> User('srinu', 'srinivas@gmail.com', 'default.jpg')
+
+>>> db.drop_all()
+>>> db.create_all()
+>>> User.query.all()
+[]
+>>> Post.query.all()
+[]
+
+------------------------------------------------------------------------------------------------------------------------
+
+                                       *End of PART-4: DATABASE with SQLAlchemy*
+
+************************************************************************************************************************
+                                                                                                             22-04-2023
+                                              PART-5: PACKAGE STRUCTURE
+                                                                                                             09:00:40AM
+------------------------------------------------------------------------------------------------------------------------
+
+
+
+
