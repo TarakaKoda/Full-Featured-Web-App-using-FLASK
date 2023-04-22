@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css')}}">
+    <style>
+        body {
+            background-image: url('https://lh3.googleusercontent.com/_-m3Du9hfX4mVjtSQit18Rh_JHc-wxsptvm3HW0IqmdvqvnK1p5qlrDXGDezDje0_8oMsKbp-4Age3tw-EyI8SqDE9DPM0-9yPvvxI0TC_Pl4qVmmzfuCm2oehQG6cuSeFQrKRyTTqi9qc-sFdKb3b6vSxgqX8EgpLALrrCmnX-qazpePoEd9nr7QfmHnwJNPl3tWzk3Wga-UNAJa78OrTPQVlPAqMdLNMGVUD39rYkYh67x9RTHD-mp-lCk1HvjauQqc_0AMaIx-t7DuqA5Y6Tl0uKEtwny3qrlba7hDTa0MlRyuUsioBnpAAJJV8z-7XEb5JNmE09OA989gtP8t9250VWAHxoHdkB1EXuFQLn_7c6B3YvK4EoZ78lbxHgPHu115QDmscg70yjw-8bBNwOEZtgAcsyr1sUTdVNJI_1Aa_pMt0raqrzu-rStcHwlKCieGt8P8No3r8zpyXCUG2peEVHr8Y5NAAGMSxTe0VMxDYXSohd05a-Ms3qQbDuFpp0lXWPOjL6JUdvbyGETEXmxwvliIdR1elg28OvtEo5ep4-AZK_nmvjCOiISEON9uQvIlKNIpokOBGEo4lCGergGN2MtTCyDrz7YY9hytSprn5Q428fSnFk98grofHXeEupn-K4ezwZJohaqv_mXzKr4S39huFd3MqjQYuvxBPsw4ta8aAeEmRQ2--Vo3UcOrPpYtjWihK6TlcnEW1xMu1IweOdxBSpFDF8-CKAyKAGPd2mNvuvCy2tOY9cO52sGRq1wXhbyyGbEoDWcYxDQB50x_HwRC7VS8Si8PWXxCCialRhiMjj6_9S2ZC36pY9JDKH7Wjic-T9T2st0AimFPwEgfCgtcyGabkiJ63ofZyFrQwBYRH4YE5QEHxE3qA4uHtoFITxKsr5JEY4fQL6eQ2wdafHI32pJeAM2=w1689-h950-s-no?authuser=0');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+
+
+    {% if title %}
+        <title>Flask Blog - {{title}}</title>
+    {% else %}
+        <title>Flask Blog</title>
+    {% endif %}
+</head>
+<body>
+    <header class="site-header">
+      <nav class="navbar navbar-expand-md navbar-dark bg-warning fixed-top">
+      <img src="https://lh3.googleusercontent.com/vi7J1cWPPRrVgJWCwhZCSAXsEkjZWPr_p0uuEAANlOZkADW8zckaJ3ZMqBg_Df9-kFsbXCulUPEzCcuILsr4DqdNL1qhWxdpa_SVkxP0X6gcYiVoHdFO-zISLDEfpGGKY2F_qV5-HYpTd5toRM563i1ZIBpTR1Z1ZsQYkI3hmgwUWXxS8YdjZY5-svRih5FY5g_ljymczJn9r7flTf0Ok15zeHNI-yFYUyVL8NIND-WmyVAJHLw5v3CP2EidENIIfxeUolOz9qCvxnv0XSVCwmJd4lFmQJQsAZkem-s5sqQ416Z6lzR6vpx6SNvlMgHmOqjPimDnhWs_TLm34NfxIbh9NENQkXAzM_0W7xAc-SghtZ-k7SvT8Tq4I2VcSy83VDHRpTS5ZHVQvh5dQ_-tkCkohMN_-hded2DBRhZCmQkHRtGwjJJiTRLPnU1yFMnrGkS1PadMbie8NgFHONYmMdrQU5XFuQHWWJQyjrMoHy5T7yyLMIaim66J2Xlwj19VH081goEF4bVPjKHydQ4WZtSs376hSKe1uA0xIe_IPbMElG_R5JNVVXj6gYJO37xongJHDfBMn6rVCDGkO8qhhH7b3oWjj3vlmRgD8bQaDHToGlcsywQuxr_16T5oY1DKhAAjr1DbEINUvX1fY07UCAJ4JC3OPwt_mdV6uQJGHDYeIvlLBh0yw18uxnzDxXZt84Vf7XgjV5nuPfN37Qi6CD_ecXmLD09YLbtDbfJ8qfW4R4ghWkMb7LwzNDV_ZllDULuTBAt_9hVtOa8JuQ5PqJ3p5RPuNdr4-53u-b0cKRnttRtViltxfeDqnAqFh-BNZB9434hn8ltskDyllt5NPRim4AUv5yKAi9Zhxsy5qybq3G-cDGInbJTV1vTDxjRvndP_hFhCplX5xjNeOagkNPCmzneYbDuHijKk=w489-h511-s-no?authuser=0" alt="Capsule Logo" class="logo" style="margin-left: 20px;">
+        <div class="container">
+           <a class="navbar-brand text-dark mr-5" href="/">
+               Thunder&nbsp;<span>&#9889;</span>&nbsp;Blog
+           </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarToggle">
+            <div class="navbar-nav mr-auto">
+              <a class="nav-item1 nav-link rounded text-dark mr-3" href="{{ url_for('home') }}">Home</a>
+              <a class="nav-item1 nav-link rounded text-dark" href="{{ url_for('about') }}">About</a>
+            </div>
+            <!-- Navbar Right Side -->
+                <div class="navbar-nav">
+                  <a class="nav-item nav-link border-color rounded text-dark mr-2" href="{{ url_for('login') }}">Login</a>
+                  <a class="nav-item nav-link border-color rounded text-dark " href="{{ url_for('register') }}">Register</a>
+                </div>
+
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main role="main" class="container">
+      <div class="row">
+        <div class="col-md-8">
+          {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            {%  for category, message in messages %}
+                <div class="alert alert-{{ category }}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+          {% endif %}
+          {% endwith %}
+          {% block content %}{% endblock %}
+        </div>
+        <div class="col-md-4">
+          <div class="content-section">
+            <h3>Our Sidebar</h3>
+            <p class='text-muted'>You can put any information here you'd like.
+              <ul class="list-group">
+                <li class="list-group-item list-group-item-light">Latest Posts</li>
+                <li class="list-group-item list-group-item-light">Announcements</li>
+                <li class="list-group-item list-group-item-light">Calendars</li>
+                <li class="list-group-item list-group-item-light">etc</li>
+              </ul>
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
+
