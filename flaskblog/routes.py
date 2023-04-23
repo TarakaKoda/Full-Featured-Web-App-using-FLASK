@@ -60,7 +60,7 @@ def login():
             return redirect(next_page) if next_page else redirect(url_for("home"))
         else:
             flash(f"⚠ Thunder Strikes! Login Unsuccessful. Please check Email and Password", "danger")
-    return render_template("login.html", tilte="Login", form=form)
+    return render_template("login.html", title="Login", form=form)
 
 
 @app.route("/logout")
