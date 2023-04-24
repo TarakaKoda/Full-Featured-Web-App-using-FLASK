@@ -114,14 +114,13 @@ nav {
     border-color: black; /* Change to black for the border color */
 }
 
-#zenitsu {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  text-align: center;
+.account-img {
+  height: 125px;
+  width: 125px;
+  margin-right: 20px;
+  margin-bottom: 16px;
 }
 
-#zenitsu img {
-  display: inline-block;
+.account-heading {
+  font-size: 2.5rem;
 }
