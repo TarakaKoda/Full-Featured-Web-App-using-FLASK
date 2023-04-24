@@ -12,7 +12,7 @@
                         <div class="invalid-feedback">
                             {% for error in form.title.errors%}
                             <span>{{ error }}</span>
-                            {% endfor %}
+                            {%endfor%}
                         </div>title
                     {% else %}
                         {{ form.title(class="form-control form-control-lg") }}
