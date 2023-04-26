@@ -19,8 +19,8 @@ app.config["MAIL_SERVER"] = "smtp.gmail.com"
 app.config["MAIL_PORT"] = 465
 app.config["MAIL_USER_TLS"] = False
 app.config["MAIL_USER_SSL"] = True
-app.config["MAIL_USERNAME"] = "srinivaskoda9@gmil.com"
-app.config["MAIL_PASSWORD"] = "sunrisers"
+app.config["MAIL_USERNAME"] = "youremail@gmail.com"
+app.config["MAIL_PASSWORD"] = "yourpassword"
 mail = Mail(app)
 
 from flaskblog import routes
