@@ -111,7 +111,7 @@ nav {
 }
 
 .btn-outline-info:hover {
-    background-color: yellow;
+    background-color: #ffc40c;
     color: black; /* Change to black for the text color */
     border-color: black; /* Change to black for the border color */
 }
