@@ -17,7 +17,7 @@ mail = Mail()
 
 def create_app(config_class=Config):
     app = Flask(__name__)  # app is a WSGI application (Web Server Gateway Interface)
-    # __name__ is a name of the application’s module or package.
+
     app.config.from_object(Config)
 
     db.init_app(app)
